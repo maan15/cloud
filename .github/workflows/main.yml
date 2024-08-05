@@ -3,28 +3,17 @@ name: Upload website to S3
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository (v4.1.7)
-        uses: actions/checkout@v4.1.7
-
-      - name: Checkout repository (master)
-        uses: actions/checkout@master
-
-      - name: List directory for debugging
-        run: ls -R
-
-      - name: Sync S3 Bucket
-        uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --delete
+      - uses: actions/checkout@master
+      - uses: jakejarvis/s3-sync-action@master
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: 'ap-south-1'
-          SOURCE_DIR: 'cloud/website'
+          SOURCE_DIR: 'cloud/website
