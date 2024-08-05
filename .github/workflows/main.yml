@@ -1,6 +1,3 @@
-name: Checkout
-uses: actions/checkout@v4.1.7
-
 name: Upload website to S3
 
 on:
@@ -13,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.1.7
 
       - name: List directory for debugging
         run: ls -R
