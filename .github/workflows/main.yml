@@ -9,8 +9,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repository (v4.1.7)
         uses: actions/checkout@v4.1.7
+
+      - name: Checkout repository (master)
+        uses: actions/checkout@master
 
       - name: List directory for debugging
         run: ls -R
