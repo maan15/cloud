@@ -8,7 +8,7 @@ async function updateCounter() {
         }
         let data = await response.text();
         console.log('API Response:', data);
-        counter.innerHTML = `[ ${data} views!]`;
+        counter.innerHTML = ` ${data} views!`;
 
     } catch (error) {
         console.error('Error:', error);
