@@ -59,9 +59,9 @@ h3 {
 }
 
 ul {
-  list-style-type: none;
   padding: 0;
-  text-align: left;
+  list-style: none;
+  text-align: center;
   color: white;
 }
 
@@ -98,7 +98,6 @@ button {
 #new, #new2 {
   color: black;
   padding: 0 20px;
-  margin: 0 70px 0 70px;
 }
 
 .views {
