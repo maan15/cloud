@@ -1,0 +1,17 @@
+#this function is to be coded to aws lambda
+
+import boto3
+
+# Initialize the DynamoDB resource and specify the table name
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('view_count')
+
+def lambda_handler(event, co):
+    # Get the current item with id '1' from the table
+    response = table.get_item(Key={'id': '1'})
+    
+    # Retrieve the current views count, defaulting to 0 if it doesn't exist
+    views = response['Item'].get('views', 0)
+    
+    # Increment the views count by 1
+    views += 1
